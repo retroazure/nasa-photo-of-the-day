@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import "./App.css";
 import PicHolder from "./components/PictureHolder";
 import axios from 'axios';
+import ButtonComponent from "./components/button";
+import  DataDisplay from "./components/dataDisplay";
 
 function App() {
 
@@ -23,6 +25,7 @@ function App() {
     return <h3>Loading...</h3>;
   }
 
+  
   console.log(pictureData);
   
   
@@ -30,7 +33,10 @@ function App() {
     <div className="App">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png"/>
       <PicHolder data = {pictureData.url}/>
-
+      <ButtonComponent />
+      <DataDisplay data = {pictureData.title} />
+      <DataDisplay data = {pictureData.explanation} key={8}/>
+      <DataDisplay data = {pictureData.date} key={9}/>
       </div>
   );
 }
